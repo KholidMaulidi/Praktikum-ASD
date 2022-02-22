@@ -4,7 +4,7 @@
 
 1. Pemilihan Nilai Akhir
 
-<img src="hitungnilaiAkhir.jpg"> 
+<img src="hitungNilaiAkhir.jpg"> 
 
 2. Perulangan NIM
 
