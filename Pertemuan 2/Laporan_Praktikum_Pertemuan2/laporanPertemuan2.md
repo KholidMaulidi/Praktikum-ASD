@@ -1,9 +1,9 @@
 ## subbab 2.2
 
 pertanyaan
-1. object : memiliki nilai yang spesifik
+1. object : suatu rancangan yang tidak memiliki bentuk nyata dan atribut pada class bersifat umum dan tidak memiliki nilai spesifik.
     
-    class : bersifat umum 
+    class : bentuk nyata dari class dan atribut dari object bersifat spesifik dan memiliki nilai yang spesifik.
 2. diawali dengan "class" dan "nama class"
 3. 4 atribut, String namaBarang, jenisBarang dan int stok, hargaSatuan. deklarasi atribut dilakukan pada baris 13 dan 14
 4. 4 method, void tampilBarang() , void tambahStok() , void kurangiStok() , int hitungHargaTotal() . deklarasi method dilakukan pada baris 16, 23, 27 dan 31
