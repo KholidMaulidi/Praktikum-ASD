@@ -44,5 +44,5 @@ pertanyaan
 
 3. latihan2
 
-<img src = "Latihan2.jpg">
+<img src = "latihan2.jpg">
 
