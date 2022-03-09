@@ -7,7 +7,7 @@ ppArray index ke-1
 3. membuat ppArray menampung 3 objek PersegiPanjang 
 4.  menginstansiasikan array(membuat objek PersegiPanjang  ke index array 1
     dan mengisi atribut array index 1)
-5. 
+5. agar lebih fleksibel dan mampu mempresentasikan class dan objek itu sendiri
 
 ## subbab 3.3
 pertanyaan
