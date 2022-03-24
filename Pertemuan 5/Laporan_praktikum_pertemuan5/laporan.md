@@ -31,35 +31,36 @@ dengan nilai sebelumnya dan kemudian program akan mereturn pada variable fakto
 			int fakto =n * faktorialDC(n-1);
 			return fakto;
 		}
-	}
-	}
+		}
+		}
 
-	public class faktorialMain{
-	public static void main(String[] args){
-		Scanner sc = new Scanner(System.in);
-		System.out.println("===============================");
-		System.out.print("Masukkan jumlah elemen yang ingin dihitung: ");
-		int elemen = sc.nextInt();
-		faktorial[] fk = new faktorial[elemen];
-		for(int i =0; i<elemen; i++){
+		public class faktorialMain{
+		public static void main(String[] args){
+			Scanner sc = new Scanner(System.in);
+			System.out.println("===============================");
+			System.out.print("Masukkan jumlah elemen yang ingin dihitung: ");
+			int elemen = sc.nextInt();
+			faktorial[] fk = new faktorial[elemen];
+			for(int i =0; i<elemen; i++){
 			fk[i] = new faktorial();
 			System.out.print("Masukkan nilai data ke-"+(i+1)+" : ");
 			fk[i].nilai = sc.nextInt();
-		}
-		System.out.println("===========================");
-		System.out.println("Hasil faktorial dengan brute force");
-		for(int i=0; i<elemen; i++){
-			System.out.println("Faktorial dari nilai "+fk[i].nilai+" adalah : "+fk[i].faktorialBF(fk[i].nilai));
-		}
-		System.out.println("============================");
-		System.out.println("Hasil faktorial dengan divide and conquer");
-		for(int i=0; i<elemen; i++){
-		 	System.out.println("faktorial dari nilai "+fk[i].nilai+" adalah : "+fk[i].faktorialDC(fk[i].nilai));
-		}
-		System.out.println("============================");
-		}
-		}
-<img src ="faktorialWhile.jpg">
+			}
+			System.out.println("===========================");
+			System.out.println("Hasil faktorial dengan brute force");
+			for(int i=0; i<elemen; i++){
+				System.out.println("Faktorial dari nilai "+fk[i].nilai+" adalah : "+fk[i].faktorialBF(fk[i].nilai));
+			}
+			System.out.println("============================");
+			System.out.println("Hasil faktorial dengan divide and conquer");
+			for(int i=0; i<elemen; i++){
+		 		System.out.println("faktorial dari nilai "+fk[i].nilai+" adalah : "+fk[i].faktorialDC(fk[i].nilai));
+			}
+			System.out.println("============================");
+			}
+			}
+	
+	<img src ="faktorialWhile.jpg">
 
 4. 
 		public class faktorialMain{
