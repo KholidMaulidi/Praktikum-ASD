@@ -9,8 +9,8 @@ dengan nilai sebelumnya dan kemudian program akan mereturn pada variable fakto
 • Combine = n*faktorialDC(n-1) pengombinasian dengan perkalian.
 3. 
 	
-	import java.util.Scanner;
-	class faktorial{
+		import java.util.Scanner;
+		class faktorial{
 		public int nilai;
 
 		public int faktorialBF(int n){
@@ -21,9 +21,9 @@ dengan nilai sebelumnya dan kemudian program akan mereturn pada variable fakto
 			i++;
 		}
 		return fakto;
-	}
+		}
 
-	public int faktorialDC(int n){
+		public int faktorialDC(int n){
 		if(n==1){
 			return 1;
 		}
