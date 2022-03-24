@@ -31,9 +31,9 @@ class faktorial{
 			return fakto;
 		}
 	}
-}
+	}
 
-public class faktorialMain{
+	public class faktorialMain{
 	public static void main(String[] args){
 		Scanner sc = new Scanner(System.in);
 		System.out.println("===============================");
@@ -100,6 +100,7 @@ public class faktorialMain{
 5. ada
 
 <img src ="faktorialWaktu1.jpg">
+
 <img src ="faktorialWaktu2.jpg">
 
 ## subbab 4.3
@@ -109,8 +110,82 @@ mana pada fungsi ini perulangan yang terjadi akibat pengeksekusian suatu fungsi 
 2. Maksud dari potongan tersebut yakni apabila terdapat suatu bilangan ganjil maka program akan melakukan pembagian terhadap variuable n, yakni di bagi 2 kemudian dikalikan dengan method itu sendiri dan kemudian di kalikan lagi dengan variable a. namun apabila terdapat suatu bilangan genap maka program akan melakukan return/nilai balik dan di dalam return tersebut dilakukan pembagian terhadap variable 
 n, yang mana variable n di bagi 2 dan kemudian di kalikan dengan method itu sendiri namun tidak dikalikan dengan nilai daripada variable a.
 3. Tahap combine sudah terjadi pada kode tersebut, dan lebih tepatnya tahapan tersebut di lakukan pada class Pangkat yang mana lebih tepatnya terletak pada method pangkatDC dan berada di baris kode ke 46
-4. 
-5. 
+4. NO 4 DAN 5
+	import java.util.Scanner;
+	class pangkat{
+	public int nilai, pangkat;
+
+	pangkat(int n, int p){
+		nilai= n;
+		pangkat =p;
+	}
+
+	public int pangkatBF(int a, int b){
+		int hasil =1;
+		for(int i =0; i<b; i++){
+			hasil = hasil *a;
+		}
+		return hasil;
+	}
+
+	public int pangkatDC(int a, int b){
+		if(b==0){
+			return 1;
+		} else{
+			if(b%2==1){
+				return (pangkatDC(a, b/2)*pangkatDC(a, b/2)*a);
+			} else {
+				return (pangkatDC(a, b/2)*pangkatDC(a, b/2));
+			}
+			}
+		}
+	}
+
+		public class pangkatMain{
+			public static void main(String [] args){
+			Scanner sc = new Scanner(System.in);
+
+		System.out.println("======================================");
+		System.out.print("Masukkan jumlah elemen yang ingim dihitung: ");
+		int elemen = sc.nextInt();
+		pangkat[] p1 = new pangkat[elemen]; 
+		for(int i=0; i<elemen; i++){
+			System.out.print("Masukkan nilai yang akan dipangkatkan: ");
+			int bil = sc.nextInt();
+			System.out.print("Masukkan nilai pemangkat ke-" + (i+1) + " : ");
+			int png = sc.nextInt();
+			p1[i] = new pangkat(bil, png);
+		}
+		int noFitur;
+       
+    	System.out.println("Fitur-fitur : \n(01) Fitur Hitung menggunakan Brute Force\n(02) Fitur Hitung menggunakan Divide Conquer");
+   	 	System.out.println("\nSilahkan Pilih Fitur dengan Memasukkan Nomor Fitur :");
+    	System.out.println("(Inputkan angka 00 untuk mengakhiri program)");
+       
+    	noFitur = sc.nextInt();
+    	System.out.println(" ");
+        
+    	if(noFitur==01){
+        	System.out.println("=======================================");
+			System.out.println("Hasil pangkat dengan Brute Force");
+			for(int i=0; i<elemen; i++){
+			System.out.println("Nilai " + p1[i].nilai + " pangkat "+ p1[i].pangkat + " adalah " + p1[i].pangkatBF(p1[i].nilai, p1[i].pangkat));
+			}
+    	}else if(noFitur==02){
+        	System.out.println("=======================================");
+			System.out.println("Hasil pangkat dengan Divide Conquer");
+			for(int i=0; i<elemen; i++){
+			System.out.println("Nilai " + p1[i].nilai + " pangkat "+ p1[i].pangkat + " adalah " + p1[i].pangkatDC(p1[i].nilai, p1[i].pangkat));
+			}
+    	}else if(noFitur==03){
+        
+    	}else{
+        System.out.println("Nomor fitur yang Anda masukkan invalid!\n");
+    	}
+		
+		System.out.println("=======================================");
+	}
+}
 
 ## subbab 4.4
 pertanyaan 
@@ -194,4 +269,4 @@ dari perhitungan (1+r)/2 yang mana nantinya akan digunakan sebagai pengisian nil
             System.out.println("Total keuntungan perusahaan ke-" + (i+1)+" selama " + sm.elemen[i] + " bulan adalah = " +sm.totalDC(sm.keuntungan, 0, sm.elemen[i]-1));
         		}
 			}
-	}
+		}
