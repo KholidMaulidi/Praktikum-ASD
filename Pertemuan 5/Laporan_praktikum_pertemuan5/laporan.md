@@ -8,11 +8,12 @@ dengan nilai sebelumnya dan kemudian program akan mereturn pada variable fakto
 • Conquer = n*.faktorialDC(n-1) penyelesaian dengan rekursif. 
 • Combine = n*faktorialDC(n-1) pengombinasian dengan perkalian.
 3. 
-import java.util.Scanner;
-class faktorial{
-	public int nilai;
+	
+	import java.util.Scanner;
+	class faktorial{
+		public int nilai;
 
-	public int faktorialBF(int n){
+		public int faktorialBF(int n){
 		int fakto =1;
 		int i=1;
 		while(i<=n){
@@ -56,8 +57,8 @@ class faktorial{
 		 	System.out.println("faktorial dari nilai "+fk[i].nilai+" adalah : "+fk[i].faktorialDC(fk[i].nilai));
 		}
 		System.out.println("============================");
-	}
-}
+		}
+		}
 <img src ="faktorialWhile.jpg">
 
 4. 
