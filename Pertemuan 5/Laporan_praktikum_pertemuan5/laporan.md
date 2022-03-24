@@ -113,24 +113,25 @@ mana pada fungsi ini perulangan yang terjadi akibat pengeksekusian suatu fungsi 
 n, yang mana variable n di bagi 2 dan kemudian di kalikan dengan method itu sendiri namun tidak dikalikan dengan nilai daripada variable a.
 3. Tahap combine sudah terjadi pada kode tersebut, dan lebih tepatnya tahapan tersebut di lakukan pada class Pangkat yang mana lebih tepatnya terletak pada method pangkatDC dan berada di baris kode ke 46
 4. NO 4 DAN 5
-	import java.util.Scanner;
-	class pangkat{
-	public int nilai, pangkat;
+	
+		import java.util.Scanner;
+		class pangkat{
+			public int nilai, pangkat;
 
-	pangkat(int n, int p){
-		nilai= n;
-		pangkat =p;
-	}
+			pangkat(int n, int p){
+			nilai= n;
+			pangkat =p;
+			}
 
-	public int pangkatBF(int a, int b){
+		public int pangkatBF(int a, int b){
 		int hasil =1;
 		for(int i =0; i<b; i++){
 			hasil = hasil *a;
 		}
 		return hasil;
-	}
+		}
 
-	public int pangkatDC(int a, int b){
+		public int pangkatDC(int a, int b){
 		if(b==0){
 			return 1;
 		} else{
@@ -140,8 +141,8 @@ n, yang mana variable n di bagi 2 dan kemudian di kalikan dengan method itu send
 				return (pangkatDC(a, b/2)*pangkatDC(a, b/2));
 			}
 			}
+			}
 		}
-	}
 
 		public class pangkatMain{
 			public static void main(String [] args){
@@ -200,7 +201,9 @@ b. totalDC(), kode program lebih panjang tetapi dengan metode ini bisa menyelesa
 3. Return value tersebut berguna untuk mengembalikan nilai dari variable lsum ,variable rsum dan juga arr [mid] yang mana masing-masing nya dijumlahkan terlebih dahulu.
 4. Di butuhkan variable mid pada method TotalDC() yakni guna menampng nilai 
 dari perhitungan (1+r)/2 yang mana nantinya akan digunakan sebagai pengisian nilai pada parameter di method TotalDC()
-5.  		import java.util.Scanner;
+5.  		
+
+	import java.util.Scanner;
 		class sum{
 			int elemen[];
 			int perusahaan[];
