@@ -61,41 +61,44 @@ public class faktorialMain{
 <img src ="faktorialWhile.jpg">
 
 4. 
-public class faktorialMain{
-	public static void main(String[] args){
-		Scanner sc = new Scanner(System.in);
-		System.out.println("===============================");
-		System.out.print("Masukkan jumlah elemen yang ingin dihitung: ");
-		int elemen = sc.nextInt();
-		faktorial[] fk = new faktorial[elemen];
-		for(int i =0; i<elemen; i++){
-			fk[i] = new faktorial();
-			System.out.print("Masukkan nilai data ke-"+(i+1)+" : ");
-			fk[i].nilai = sc.nextInt();
+		public class faktorialMain{
+			public static void main(String[] args){
+				Scanner sc = new Scanner(System.in);
+				System.out.println("===============================");
+				System.out.print("Masukkan jumlah elemen yang ingin dihitung: ");
+				int elemen = sc.nextInt();
+				faktorial[] fk = new faktorial[elemen];
+				for(int i =0; i<elemen; i++){
+					fk[i] = new faktorial();
+					System.out.print("Masukkan nilai data ke-"+(i+1)+" : ");
+					fk[i].nilai = sc.nextInt();
+				}
+				long start = System.currentTimeMillis();
+				System.out.println("===========================");
+				System.out.println("Hasil faktorial dengan brute force");
+				for(int i=0; i<elemen; i++){
+					System.out.println("Faktorial dari nilai "+fk[i].nilai+" adalah : "+fk[i].faktorialBF(fk[i].nilai));
+				}
+				long end = System.currentTimeMillis();
+				long elapsedtime = end-start;
+				System.out.println("Waktu " + String.valueOf(elapsedtime)+ " ms");
+				long start1 = System.currentTimeMillis();
+				System.out.println("============================");
+				System.out.println("Hasil faktorial dengan divide and conquer");
+				for(int i=0; i<elemen; i++){
+		 			System.out.println("faktorial dari nilai "+fk[i].nilai+" adalah : "+fk[i].faktorialDC(fk[i].nilai));
+				}
+				long end1 = System.currentTimeMillis();
+				long elapsedtime1 = end1-start1;
+				System.out.println("Waktu " + String.valueOf(elapsedtime1)+ " ms");
+				System.out.println("============================");
+			}
 		}
-		long start = System.currentTimeMillis();
-		System.out.println("===========================");
-		System.out.println("Hasil faktorial dengan brute force");
-		for(int i=0; i<elemen; i++){
-			System.out.println("Faktorial dari nilai "+fk[i].nilai+" adalah : "+fk[i].faktorialBF(fk[i].nilai));
-		}
-		long end = System.currentTimeMillis();
-		long elapsedtime = end-start;
-		System.out.println("Waktu " + String.valueOf(elapsedtime)+ " ms");
-		long start1 = System.currentTimeMillis();
-		System.out.println("============================");
-		System.out.println("Hasil faktorial dengan divide and conquer");
-		for(int i=0; i<elemen; i++){
-		 	System.out.println("faktorial dari nilai "+fk[i].nilai+" adalah : "+fk[i].faktorialDC(fk[i].nilai));
-		}
-		long end1 = System.currentTimeMillis();
-		long elapsedtime1 = end1-start1;
-		System.out.println("Waktu " + String.valueOf(elapsedtime1)+ " ms");
-		System.out.println("============================");
-	}
-}
-<img src ="faktorialCekWaktu.jpg">
+		
+	<img src ="faktorialCekWaktu.jpg">
+
 5. ada
+
 <img src ="faktorialWaktu1.jpg">
 <img src ="faktorialWaktu2.jpg">
 
@@ -120,4 +123,75 @@ b. totalDC(), kode program lebih panjang tetapi dengan metode ini bisa menyelesa
 3. Return value tersebut berguna untuk mengembalikan nilai dari variable lsum ,variable rsum dan juga arr [mid] yang mana masing-masing nya dijumlahkan terlebih dahulu.
 4. Di butuhkan variable mid pada method TotalDC() yakni guna menampng nilai 
 dari perhitungan (1+r)/2 yang mana nantinya akan digunakan sebagai pengisian nilai pada parameter di method TotalDC()
-5. 
+5.  		import java.util.Scanner;
+		class sum{
+			int elemen[];
+			int perusahaan[];
+			double keuntungan[];
+			double total;
+
+			sum(int elemen, int jumPrs){
+				this.elemen = new int [elemen];
+				this.keuntungan = new double[elemen];
+				this.perusahaan = new int[jumPrs];
+				this.total = 0;
+			}
+
+			double totalBF(double arr[]){
+				for(int i=0; i<elemen.length; i++){
+					total = total + arr[i];
+				}
+				return total;
+			}
+
+			double totalDC(double arr[], int l, int r){
+			if(l== r){
+				return arr[l];
+			} else if(l<r){
+				int mid = (l+r)/2;
+				double lsum = totalDC(arr, l, mid-1 );
+				double rsum = totalDC(arr, mid+1, r);
+				return lsum+rsum+arr[mid];
+			}	
+			return 0;
+			}
+		}
+
+		public class sumMain{
+			public static void main(String[] args){
+				Scanner sc = new Scanner(System.in);
+
+				int el =0;
+
+				System.out.println("=======================================================");
+				System.out.println("Hitung Keuntungan Total");
+
+		
+				System.out.print("Masukkan jumlah perusahaan: ");
+        			int jmlhPrs= sc.nextInt();
+        			for(int i=0; i<jmlhPrs; i++){
+            			System.out.print("Masukkan jumlah bulan perusahaan ke-" +(i+1)+ " : ");
+            			int elm= sc.nextInt();
+           		 	el= elm;
+       				}
+        			sum sm = new sum(el,jmlhPrs);
+        			System.out.println("=========================================================");
+        			for(int i=0; i<jmlhPrs; i++){
+            			System.out.println("Keuntungan Perusahaan " +(i+1));
+            			for(int j=0; j<el; j++){
+                			System.out.print("Masukkan keuntungan perusahaan bulan ke -" +(j+1)+" = ");
+                			sm.keuntungan[j]= sc.nextDouble();
+            			}
+        			}
+
+        			for(int i=0; i<jmlhPrs;i++){
+            				System.out.println("==========================================================");
+            				System.out.println("Keuntungan Perusahaan " + (i+1));
+            				System.out.println("Algoritma Brute Force");
+            		System.out.printf("Total keuntungan perusahaan ke-" + (i+1)+" selama " + sm.elemen[i] + " bulan adalah = " +sm.totalBF(sm.keuntungan));
+            		System.out.println("\n==========================================================");
+            		System.out.println("Algoritma Divide Conquer");
+            System.out.println("Total keuntungan perusahaan ke-" + (i+1)+" selama " + sm.elemen[i] + " bulan adalah = " +sm.totalDC(sm.keuntungan, 0, sm.elemen[i]-1));
+        		}
+			}
+	}
